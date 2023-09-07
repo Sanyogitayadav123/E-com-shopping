@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import REACT_APP_BASE_URL from '../../api';
+
+
+
 
 const ShopPage = () => {
   const [product, setProduct] = useState([]);
@@ -16,7 +20,7 @@ const ShopPage = () => {
         const perPage = 10; // Set the number of items per page
 
         const { data } = await axios.get(
-            `${process.env.REACT_APP_BASE_URL}/product/get-product?page=${currentPage}&perPage=${perPage}`
+            `${REACT_APP_BASE_URL}/product/get-product?page=${currentPage}&perPage=${perPage}`
         );
 
         setProduct(data?.product);
@@ -26,7 +30,7 @@ const ShopPage = () => {
         console.log('error', error);
     }
 };
-  console.log("REACT_APP_BASE_URL:", process.env.REACT_APP_BASE_URL);
+
 
     return (
 <>
@@ -50,7 +54,7 @@ const ShopPage = () => {
         <div className="col-md-3 col-sm-6" key={index}>
         <div className="single-shop-product">
           <div className="product-upper">
-            <img   src={`${process.env.REACT_APP_BASE_URL}/public/productImages/${data?.image}`} alt="" />
+            <img   src={`${REACT_APP_BASE_URL}/public/productImages/${data?.image}`} alt="" />
           </div>
           <h2>
             <a href="">{data?.productName}</a>
