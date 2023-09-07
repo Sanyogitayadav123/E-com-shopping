@@ -4,7 +4,7 @@ const Cart = () => {
   return (
     <>
 
-
+{/* 
 <div className="product-big-title-area">
   <div className="container">
     <div className="row">
@@ -611,7 +611,7 @@ const Cart = () => {
       </div>
     </div>
   </div>
-</div>
+</div> */}
 
     </>
   )
