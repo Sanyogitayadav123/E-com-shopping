@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import REACT_APP_BASE_URL from '../../api';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -13,7 +14,8 @@ const ShopPage = () => {
 
   useEffect(() => {
     getProduct();
-}, [currentPage]);
+    // eslint-disable-next-line
+},[currentPage]);
 
   const getProduct = async () => {
     try {
@@ -57,22 +59,23 @@ const ShopPage = () => {
             <img   src={`${REACT_APP_BASE_URL}/public/productImages/${data?.image}`} alt="" />
           </div>
           <h2>
-            <a href="">{data?.productName}</a>
+            <NavLink to="/">{data?.productName}</NavLink>
           </h2>
           <div className="product-carousel-price">
             <ins>${data?.price}</ins> 
           </div>
           <div className="product-option-shop">
-            <a
+            <NavLink
               className="add_to_cart_button"
               data-quantity={1}
               data-product_sku=""
               data-product_id={70}
               rel="nofollow"
-              href={"/canvas/shop/?add-to-cart=70"}
+              to={'/'}
+              // href={"/canvas/shop/?add-to-cart=70"}
             >
               Add to cart
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>
@@ -122,21 +125,21 @@ const ShopPage = () => {
             <nav>
                 <ul className="pagination">
                     <li>
-                        <a href="#" aria-label="Previous" onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+                        <button aria-label="Previous" onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
                             <span aria-hidden="true">«</span>
-                        </a>
+                        </button>
                     </li>
                     {Array.from({ length: totalPages }, (_, index) => (
                         <li key={index} className={currentPage === index + 1 ? "active" : ""}>
-                            <a href="#" onClick={() => setCurrentPage(index + 1)}>
+                            <button  onClick={() => setCurrentPage(index + 1)}>
                                 {index + 1}
-                            </a>
+                            </button>
                         </li>
                     ))}
                     <li>
-                        <a href="#" aria-label="Next" onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
+                        <button aria-label="Next" onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
                             <span aria-hidden="true">»</span>
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </nav>

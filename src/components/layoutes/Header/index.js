@@ -9,7 +9,7 @@ const Header = () => {
     <>
        <div className="header-area">
     <div className="container">
-      <div className="row">
+      {/* <div className="row">
         <div className="col-md-8">
           <div className="user-menu">
             <ul>
@@ -93,11 +93,11 @@ const Header = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   </div>
 
-    <div className="site-branding-area">
+    {/* <div className="site-branding-area">
   <div className="container">
     <div className="row">
       <div className="col-sm-6">
@@ -120,7 +120,7 @@ const Header = () => {
       </div>
     </div>
   </div>
-</div>
+</div> */}
 
 <div
   id="undefined-sticky-wrapper"
@@ -145,19 +145,19 @@ const Header = () => {
         </div>
         <div className="navbar-collapse collapse">
           <ul className="nav navbar-nav">
-            <li className="active">
+            {/* <li className="active">
               <a href="index.html">Home</a>
-            </li>
+            </li> */}
             <li>
               <NavLink to="/shop">Shop page</NavLink>
             </li>
-            <li>
+            {/* <li>
               <a href="single-product.html">Single product</a>
-            </li>
+            </li> */}
             <li>
               <NavLink to="/cart">Cart</NavLink>
             </li>
-            <li>
+            {/* <li>
               <a href="checkout.html">Checkout</a>
             </li>
             <li>
@@ -168,7 +168,7 @@ const Header = () => {
             </li>
             <li>
               <a href="#">Contact</a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
